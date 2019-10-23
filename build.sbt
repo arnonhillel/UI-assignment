@@ -28,4 +28,5 @@ libraryDependencies ++= Seq(
   "org.webjars" % "bootstrap" % "3.3.4",
   "org.webjars" % "angularjs" % "1.3.15",
   "org.webjars" % "angular-ui-bootstrap" % "0.13.0",
-  "org.mockito" % "mockito-core" % "1.10.19" % "test")
+  "org.mockito" % "mockito-core" % "1.10.19" % "test",
+ "org.mongodb.scala" %% "mongo-scala-driver" % "2.7.0")

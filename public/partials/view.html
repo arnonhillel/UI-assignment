@@ -11,7 +11,6 @@
                 <h3>
                     Users
                     <a ng-href="/#/users/create" class="btn btn-primary pull-right" id="btn_user_create">Add User</a>
-                    <a class="btn btn-primary pull-right" id="btn_user_delete" style="margin-right: 10px">Delete</a>
                 </h3>
                 <hr>
             </div>
@@ -42,6 +41,7 @@
                     </td>
                     <td>
                         <a ng-href="/#/users/edit/{{usr.firstName}}/{{usr.lastName}}" class="btn btn-success pull-right" id="btn_user_update">Edit User</a>
+                        <a ng-href="/#/users/delete/{{usr.firstName}}/{{usr.lastName}}" class="btn btn-danger pull-right" id="btn_user_delete" style="margin-right: 10px">Delete</a>
                     </td>
                 </tr>
                 <tr ng-hide="uc.users.length">

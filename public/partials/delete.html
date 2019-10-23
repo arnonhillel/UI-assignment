@@ -1,0 +1,50 @@
+<div ng-controller="DeleteUserCtrl as duc">
+    <h1>Delete User</h1>
+
+    <form id="DeleteUserForm" name="DeleteUserForm" class="form-horizontal" role="form"
+          ng-submit="duc.deleteUser()">
+        <legend class="sm-col-12">Basic Information</legend>
+
+        <div class="form-group">
+            <label id="lbl_firstName" for="firstName" class="col-sm-4 control-label">First Name</label>
+
+            <div class="col-sm-8">
+                <input type="text" class="form-control" name="firstName" id="firstName" placeholder=""
+                       ng-model="duc.user.firstName">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label id="lbl_lastName" for="lastName" class="col-sm-4 control-label">Last Name</label>
+
+            <div class="col-sm-8">
+                <input type="text" class="form-control" name="lastName" id="lastName" placeholder=""
+                       ng-model="duc.user.lastName">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label id="lbl_age" for="age" class="col-sm-4 control-label"
+                   is-required="CreateUserForm.age">Age</label>
+
+            <div class="col-sm-8">
+                <input type="number" class="form-control" min="1" max="120" name="age" id="age"
+                       ng-model="duc.user.age">
+            </div>
+        </div>
+
+
+        <pre>{{ duc.user | json }}</pre>
+
+        <div class="form-group">
+            <div class="col-sm-offset-4 col-sm-8 text-right">
+                <a ng-href="/#/" id="btn_cancel" class="btn btn-warning">Cancel</a>
+
+                <button type="submit" class="btn btn-danger" id="btn_delete">Delete</button>
+            </div>
+        </div>
+
+
+    </form>
+</div>
+
