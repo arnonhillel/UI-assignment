@@ -70,14 +70,16 @@ class Users extends Controller with MongoController {
       }.getOrElse(Future.successful(BadRequest("invalid json")))
   }
 
-  def deleteUser(firstName: String, lastName: String) = Action.async(parse.json) {
+  def deleteUser = Action.async(parse.json) {
     request =>
+
       request.body.validate[User].map {
         user =>
+          // `user` is an instance of the case class `models.User`
           collection.remove(user).map {
             lastError =>
-              logger.debug(s"Successfully Deleted with LastError: $lastError")
-              Created(s"User Deleted!")
+              logger.debug(s"Successfully deleted with LastError: $lastError")
+              Created(s"User Deleted")
           }
       }.getOrElse(Future.successful(BadRequest("invalid json")))
   }

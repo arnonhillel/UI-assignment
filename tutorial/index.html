@@ -97,6 +97,16 @@
          "lastName": "joe",
          "active": true}
         </pre></code>
+        <p>Delete a user</p>
+        <code><pre>
+        DELETE -> http://localhost:9000/user
+        HEADERS: Content-Type: application/json
+        BODY:
+        { "age": 44,
+         "firstName": "jan",
+         "lastName": "joe",
+         "active": true}
+        </pre></code>
         <p>List the users</p>
         <code><pre>
         GET  -> http://localhost:9000/users

@@ -8,8 +8,8 @@ class DeleteUserCtrl
 
   deleteUser: () ->
       @$log.debug "deleteUser()"
-      @user.active = false
-      @UserService.deleteUser(@$routeParams.firstName, @$routeParams.lastName, @user)
+      @user.active = true
+      @UserService.deleteUser(@user)
       .then(
           (data) =>
             @$log.debug "Promise returned #{data} User"

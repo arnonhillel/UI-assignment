@@ -118,6 +118,17 @@ BODY:
  "lastName": "joe",
  "active": true}
 ```
+Delete a user:
+
+```json
+DELETE -> http://localhost:9000/user
+HEADERS: Content-Type: application/json
+BODY: 
+{ "age": 44,
+ "firstName": "jan",
+ "lastName": "joe",
+ "active": true}
+```
 List the users:
 
 ```json
@@ -176,7 +187,8 @@ I use the same approach to register a service [UserService.coffee](https://githu
  
 ```scala
 class UserService
-    constructor: (@$log, @$http, @$q) ->
+    constructor: (@$log, @
+$http, @$q) ->
         @$log.debug "constructing UserService"
 ...
 servicesModule.service('UserService', UserService)
