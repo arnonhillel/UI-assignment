@@ -4,12 +4,17 @@ class DeleteUserCtrl
   constructor: (@$log, @$location, @$routeParams, @UserService) ->
       @$log.debug "constructing DeleteUserController"
       @user = {}
+      @req = {}
       @findUser()
 
   deleteUser: () ->
       @$log.debug "deleteUser()"
+      @req.headers={ 'Content-Type': 'application/json'}
       @user.active = true
-      @UserService.deleteUser(@user)
+      @req.method = 'DELETE'
+      @req.data = @user
+      @req.url = "/user"
+      @UserService.deleteUser(@req)
       .then(
           (data) =>
             @$log.debug "Promise returned #{data} User"

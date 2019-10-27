@@ -52,11 +52,11 @@ class UserService
             )
       deferred.promise
 
-    deleteUser: (user) ->
-      @$log.debug "deleteUser #{angular.toJson(user, true)}"
+    deleteUser: (req) ->
+      @$log.debug "deleteUser #{angular.toJson(req, true)}"
       deferred = @$q.defer()
 
-      @$http.delete("/user", user)
+      @$http(req)
         .success((data, status, headers) =>
                 @$log.info("Successfully delete User - status #{status}")
                 deferred.resolve(data)
