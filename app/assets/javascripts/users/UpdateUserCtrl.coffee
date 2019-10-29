@@ -8,6 +8,7 @@ class UpdateUserCtrl
   updateUser: () ->
       @$log.debug "updateUser()"
       @user.active = true
+      @user.age = parseInt(@user.age)
       @UserService.updateUser(@$routeParams.firstName, @$routeParams.lastName, @user)
       .then(
           (data) =>
